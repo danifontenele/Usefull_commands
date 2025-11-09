@@ -1,0 +1,24 @@
+1) Check and free memory avaliable in 42 PC:
+- Verifica memoria ocupada(/home/user mostra a memoria pessoal disponivel):             
+df -h
+
+- Limpa ficheiros tipo a.out:
+find ~ -type f -name "a.out" -delete
+find ~ -type f -name "*.o" -delete
+find ~ -type f -perm -u+x -size +100k -delete
+
+- Limpa cache do sistema de editores:
+rm -rf ~/.cache/*
+rm -rf ~/.npm ~/.cargo ~/.local/share/Trash ~/.config/Code/Cache ~/.config/Code/CachedData
+
+- Verifica arquivos grandes restantes:
+du -ah ~ | sort -rh | head -n 20
+
+- Limpa cache do VScode(flatpak):
+rm -rf ~/.var/app/com.visualstudio.code/cache/*
+
+- Limpa cache do chrome sem apagar senhas nem historicos:
+rm -rf ~/.config/google-chrome/Default/Service\ Worker/CacheStorage/*
+
+- Limpa cache do slack:
+rm -rf ~/.var/app/com.slack.Slack/config/Slack/Cache/*

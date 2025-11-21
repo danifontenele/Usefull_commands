@@ -1,0 +1,3 @@
+valgrind:
+	gcc -Wall -Wextra -Werror <file.name> <lib.a> -o val_test
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --trace-children=no ./val_test
